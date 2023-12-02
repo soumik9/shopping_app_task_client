@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
-import { atomIsAuthenticate, atomToken, atomUser } from "../configs/states/atomState";
 import { getFromLocalStorage, removeFromLocalStorage } from "./helpers";
-
+import { atomIsAuthenticate, atomToken, atomUser } from "./atomState";
 
 export default function useAuthCheck() {
 

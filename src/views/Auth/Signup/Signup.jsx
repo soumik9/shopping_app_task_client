@@ -10,11 +10,10 @@ import { axiosPOST } from '../../../hooks/axiosMethods';
 import Input from '../../../compoents/Input';
 
 const loginSchema = Yup.object().shape({
-    name: Yup.string().required("name is required"),
-    password: Yup.string().required("password is required"),
+    name: Yup.string().required("Name is required"),
+    password: Yup.string().required("Password is required").min(6, "Password must be at least 6 characters"),
     email: Yup.string().email("Invalid email").required("Email is required"),
 });
-
 
 const Signup = () => {
 
@@ -34,13 +33,19 @@ const Signup = () => {
 
     // signup action
     const handleSignup = async (data) => {
-        // getting data
-        const getPOST = await axiosPOST('auth/signup', data, setLoading);
+        try {
+            // getting data
+            const getPOST = await axiosPOST('auth/signup', data, setLoading);
 
-        // if success
-        if (getPOST.success) {
-            reset();
-            toast.success(getPOST.message);
+            // if success
+            if (getPOST.success) {
+                reset();
+                toast.success(getPOST.message);
+            }
+
+        } catch (error) {
+            setLoading(false);
+            toast.error(`${error.response.data.message}`);
         }
     }
 

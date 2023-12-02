@@ -11,6 +11,7 @@ import { axiosPOST } from '../../../hooks/axiosMethods';
 import { setOnLocalStorage } from '../../../hooks/helpers';
 import Input from '../../../compoents/Input';
 import Button from '../../../compoents/Button';
+import toast from 'react-hot-toast';
 
 const loginSchema = Yup.object().shape({
     password: Yup.string().required("password is required"),
@@ -48,16 +49,21 @@ const Login = () => {
     // login action
     const handleLogin = async (getData) => {
 
-        // getting data
-        const getPOST = await axiosPOST('auth/signin', getData, setLoading);
+        try {
+            // getting data
+            const getPOST = await axiosPOST('auth/signin', getData, setLoading);
 
-        // if success
-        if (getPOST.success) {
-            setToken(getPOST.data.accessToken);
-            setUser(getPOST.data.user);
-            setIsAuthenticate(true);
+            // if success
+            if (getPOST.success) {
+                setToken(getPOST.data.accessToken);
+                setUser(getPOST.data.user);
+                setIsAuthenticate(true);
 
-            setOnLocalStorage('token', getPOST.data.accessToken);
+                setOnLocalStorage('token', getPOST.data.accessToken);
+            }
+        } catch (error) {
+            setLoading(false);
+            toast.error(`${error.response.data.message}`);
         }
     }
 
