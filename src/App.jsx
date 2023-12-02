@@ -8,6 +8,9 @@ import Login from './views/Auth/Login/Login';
 import Signup from './views/Auth/Signup/Signup';
 import useAuthCheck from './hooks/useAuthCheck';
 import RequireAuth from './compoents/RequiredAuth';
+import Users from './views/Users/Users';
+import DashboardLayout from './compoents/DashLayout/DashboardLayout';
+import Items from './views/Items/Items';
 
 function App() {
 
@@ -21,7 +24,21 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<RequireAuth>
-          <Home />
+          <DashboardLayout title='Dashboard'>
+            <Home />
+          </DashboardLayout>
+        </RequireAuth>}></Route>
+
+        <Route path="/items" element={<RequireAuth>
+          <DashboardLayout title='Items'>
+            <Items />
+          </DashboardLayout>
+        </RequireAuth>}></Route>
+
+        <Route path="/users" element={<RequireAuth>
+          <DashboardLayout title='Users'>
+            <Users />
+          </DashboardLayout>
         </RequireAuth>}></Route>
 
         <Route path="/login" element={<Login />}></Route>

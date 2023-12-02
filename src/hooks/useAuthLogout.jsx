@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useAtom } from 'jotai';
-import { atomIsAuthenticate, atomToken, atomUser } from '../configs/states/atomState';
 import { removeFromLocalStorage } from './helpers';
+import { atomIsAuthenticate, atomToken, atomUser } from './atomState';
 
 const useAuthLogout = () => {
 

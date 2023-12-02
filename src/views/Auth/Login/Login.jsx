@@ -27,8 +27,8 @@ const Login = () => {
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(loginSchema),
         defaultValues: {
-            email: '',
-            password: ''
+            email: 'soumik@gmail.com',
+            password: 'abcabc'
         },
     });
 
