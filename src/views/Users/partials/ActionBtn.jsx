@@ -8,8 +8,9 @@ const actionBtnIconClass = 'cursor-pointer'
 const ActionsBtn = ({ id }) => {
     return (
         <div className='flex gap-[7px]'>
+
             <Link
-                href={`/user/${id}`}
+                to={`/user/edit/${id}`}
                 className={cx(
                     actionBtnClass,
                     'bg-warning hover:bg-warning-hover'
@@ -19,6 +20,7 @@ const ActionsBtn = ({ id }) => {
                     className={cx(actionBtnIconClass)}
                 />
             </Link>
+
             <button
                 className={cx(
                     actionBtnClass,
@@ -30,6 +32,7 @@ const ActionsBtn = ({ id }) => {
                     className={cx(actionBtnIconClass)}
                 />
             </button>
+
         </div>
     )
 }

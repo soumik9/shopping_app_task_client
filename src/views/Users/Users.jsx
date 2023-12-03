@@ -32,14 +32,12 @@ const Users = () => {
     // filtering data
     useEffect(() => {
         if (searchText) {
-            console.log('hit');
             const gotDataBySearchText = data.filter((item) =>
                 item.name.toLowerCase().includes(searchText.toLowerCase()) ||
                 item.email.toLowerCase().includes(searchText.toLowerCase())
             );
             setFilteredData(gotDataBySearchText);
         } else if (data) {
-            console.log('hite');
             setFilteredData(data)
         } else {
             setFilteredData([]);
