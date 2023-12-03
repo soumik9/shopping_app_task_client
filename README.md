@@ -1,7 +1,7 @@
-# Simple E-comerce
+# Task Shop App
 
-Frontend Live Link [Simple E-Com](https://simple-ecom-ten.vercel.app)
-Backend Live Link [Backend Simple E-Com](https://simple-ecom-server-three.vercel.app)
+Frontend Live Link [Task Shop App](https://task-shop-app.vercel.app/)
+Backend Live Link [Backend Shop App](https://task-shop-app-server.vercel.app)
 
 
 ## Frontend Features
