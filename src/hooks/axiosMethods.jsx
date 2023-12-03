@@ -47,32 +47,17 @@ export const axiosPatch = async (url, data, setLoad, token) => {
     return response.data;
 }
 
-// post method withoutLoad
-export const axiosPOSTWithoutLoad = async (url, data, token) => {
+// delete method
+export const axiosDelte = async (url, setLoad, token) => {
+    setLoad(true);
 
-    const response = await axios.post(`${mainUrl}${url}`, data, {
+    const response = await axios.delete(`${mainUrl}${url}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     });
 
+    setLoad(false);
     return response.data;
 }
 
-// add method
-// export const axiosPatch = async (url, data, setLoad, token) => {
-//     setLoad(true);
-//     let response;
-//     if (token) {
-//         response = await axios.post(`${mainUrl}${url}`, data, {
-//             headers: {
-//                 'Authorization': `Bearer ${token}`
-//             }
-//         });
-//     } else {
-//         response = await axios.post(`${mainUrl}${url}`, data);
-//     }
-
-//     setLoad(false);
-//     return response.data;
-// }

@@ -57,6 +57,7 @@ const UpdateUser = ({ user }) => {
                     showPassword={showPassword}
                     setShowPassword={setShowPassword}
                     errors={errors}
+                    editPage
                 />
 
                 <div className="flex justify-end">

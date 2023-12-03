@@ -1,7 +1,7 @@
 import { Controller } from 'react-hook-form'
 import Input from '../../../compoents/Input'
 
-const UserForm = ({ showPassword, setShowPassword, errors, control }) => {
+const UserForm = ({ showPassword, setShowPassword, errors, control, editPage }) => {
     return (
         <>
 
@@ -35,7 +35,7 @@ const UserForm = ({ showPassword, setShowPassword, errors, control }) => {
                         onChange={field.onChange}
                         error={errors.email?.message}
                         labelRequired
-                        disabled
+                        disabled={editPage ? true : false}
                     />
                 )}
             />
@@ -56,6 +56,7 @@ const UserForm = ({ showPassword, setShowPassword, errors, control }) => {
                         setShowPassword={setShowPassword}
                         passwordToggle
                         autoComplete="new-password"
+                        labelRequired={editPage ? false : true}
                     />
                 )}
             />
