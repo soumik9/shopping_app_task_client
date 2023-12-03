@@ -4,5 +4,7 @@ import { PiUserSwitch } from "react-icons/pi";
 export const menuItems = [
     { to: "/", text: "Dashboard", icon: <MdOutlineSpaceDashboard /> },
     { to: "/items", text: "Items", icon: <MdProductionQuantityLimits /> },
-    { to: "/Users", text: "Users", icon: <PiUserSwitch /> },
+    { to: "/user", text: "Users", icon: <PiUserSwitch /> },
 ];
+
+export const iconSize = 'text-[22px] relative -top-[1px]'

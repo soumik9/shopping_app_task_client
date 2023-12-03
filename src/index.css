@@ -13,3 +13,12 @@
 .trans {
     @apply transition ease-in-out duration-300;
 }
+
+.rdt_Table .rdt_TableHead .rdt_TableHeadRow {
+    background-color: #445b77;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}

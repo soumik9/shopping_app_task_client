@@ -68,7 +68,7 @@ const DashboardLayout = ({ children, title }) => {
                 <div className='mt-8 px-5'>
                     <div className='bg-white p-10 rounded-sm'>
 
-                        <h2 className='text-[20px] text-primary border-b pb-1'>{title}</h2>
+                        <h2 className='text-[20px] text-primary'>{title}</h2>
 
                         <div className='mt-2'>
                             {children}
