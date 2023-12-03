@@ -48,7 +48,11 @@ const DashboardLayout = ({ children, title }) => {
                             key={index}
                             component={<Link to={item.to} />}
                             icon={item.icon}
-                            active={item.to === location.pathname}
+                            active={
+                                item.to === location.pathname ||
+                                item.to === '/user' && (location.pathname === '/user/add' || location.pathname.slice(0, 11) === '/user/edit/') ||
+                                item.to === '/item' && (location.pathname === '/item/add' || location.pathname.slice(0, 11) === '/item/edit/')
+                            }
                         >
                             {item.text}
                         </MenuItem>

@@ -8,7 +8,7 @@ import UpdateUser from "./partials/UpdateUser";
 
 const EditUser = () => {
 
-    // global
+    // globald
     const { userId } = useParams();
     const [token] = useAtom(atomToken);
 
