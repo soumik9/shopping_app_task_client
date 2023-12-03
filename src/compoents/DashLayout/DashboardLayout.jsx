@@ -34,12 +34,19 @@ const DashboardLayout = ({ children, title }) => {
 
                 <Menu
                     menuItemStyles={{
-                        button: ({ level, active }) => {
-                            if (level === 0)
-                                return {
-                                    backgroundColor: active ? '#323676' : 'inherit',
-                                    color: active ? 'white' : 'black'
-                                };
+                        button: ({ active, hover }) => {
+                            let backgroundColor = 'inherit';
+                            let color = 'black';
+
+                            if (active || hover) {
+                                backgroundColor = '#323676 !important';
+                                color = 'white';
+                            }
+
+                            return {
+                                backgroundColor,
+                                color,
+                            };
                         },
                     }}
                 >
