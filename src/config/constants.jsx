@@ -3,7 +3,7 @@ import { PiUserSwitch } from "react-icons/pi";
 
 export const menuItems = [
     { to: "/", text: "Dashboard", icon: <MdOutlineSpaceDashboard /> },
-    { to: "/items", text: "Items", icon: <MdProductionQuantityLimits /> },
+    { to: "/item", text: "Items", icon: <MdProductionQuantityLimits /> },
     { to: "/user", text: "Users", icon: <PiUserSwitch /> },
 ];
 

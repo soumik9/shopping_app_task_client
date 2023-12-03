@@ -13,6 +13,8 @@ import DashboardLayout from './compoents/DashLayout/DashboardLayout';
 import Items from './views/Items/Items';
 import AddUser from './views/Users/AddUser';
 import EditUser from './views/Users/EditUser';
+import AddItem from './views/Items/AddItem';
+import EditItem from './views/Items/EditItem';
 
 function App() {
 
@@ -31,9 +33,21 @@ function App() {
           </DashboardLayout>
         </RequireAuth>}></Route>
 
-        <Route path="/items" element={<RequireAuth>
+        <Route path="/item" element={<RequireAuth>
           <DashboardLayout title='Items'>
             <Items />
+          </DashboardLayout>
+        </RequireAuth>}></Route>
+
+        <Route path="/item/add" element={<RequireAuth>
+          <DashboardLayout title='Add Item'>
+            <AddItem />
+          </DashboardLayout>
+        </RequireAuth>}></Route>
+
+        <Route path="/item/edit/:itemId" element={<RequireAuth>
+          <DashboardLayout title='Edit Item'>
+            <EditItem />
           </DashboardLayout>
         </RequireAuth>}></Route>
 

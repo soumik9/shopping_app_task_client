@@ -72,7 +72,7 @@ const Users = () => {
     if (isError) return <div className="f-center">Error on server ....</div>
 
     return (
-        <div>
+        <>
 
             <DashboardCardAdd
                 path='/user/add'
@@ -98,7 +98,7 @@ const Users = () => {
                 persistTableHead={true}
                 paginationPerPage={15}
             />
-        </div>
+        </>
     )
 }
 
